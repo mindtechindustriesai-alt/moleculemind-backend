@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: moleculemind-backend
+    runtime: python
+    repo: https://github.com/mindtechindustriesai-alt/moleculemind-backend
+    plan: free
+    branch: main
+    buildCommand: pip install --no-cache-dir -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: CHSH_S
+        value: 2.76
+      - key: QUANTUM_CORRELATION
+        value: 0.984
+      - key: IBM_JOB_ID
+        value: d8uhvl4bp3hs738628cg
+      - key: PATENT_NUMBER
+        value: SA 2026/05142
